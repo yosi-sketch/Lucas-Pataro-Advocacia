@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --font-cinzel: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --brand-bronze: #9c5b2f;
+  --brand-bronze-dark: #7a431f;
+  --brand-bronze-light: #be855c;
+  --brand-bronze-highlight: #d6bba0;
+  --brand-espresso: #18110d;
+  --brand-ink: #1a1513;
+  --brand-ink-soft: #63574f;
+  --brand-ivory: #faf7f2;
+  --brand-paper: #ffffff;
+}
+
+@theme inline {
+  --font-cinzel: var(--font-cinzel), "Cinzel", Georgia, serif;
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-ink: #1a1513;
+  --color-ink-soft: #63574f;
+  --color-ivory: #faf7f2;
+  --color-brand-50: #fbf7f2;
+  --color-brand-100: #f5ebe0;
+  --color-brand-200: #e8d7c4;
+  --color-brand-300: #d6bba0;
+  --color-brand-400: #be855c;
+  --color-brand-500: #9c5b2f;
+  --color-brand-600: #87512f;
+  --color-brand-700: #7a431f;
+  --color-brand-800: #5c3013;
+  --color-brand-900: #3b1d09;
+  --color-brand-950: #18110d;
+  --shadow-card: 0 18px 48px rgba(32, 20, 14, 0.08);
+  --shadow-bronze: 0 10px 30px -5px rgba(122, 67, 31, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  background: var(--brand-ivory);
+  color: var(--brand-ink);
+  font-family: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+::selection {
+  background: #7a431f;
+  color: #ffffff;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.text-bronze-metallic {
+  background: linear-gradient(135deg, #7a431f 0%, #c68b59 40%, #90552d 75%, #5c3013 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-bronze-light-metallic {
+  background: linear-gradient(135deg, #f5ebe0 0%, #d6bba0 40%, #be855c 80%, #a76b41 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-bronze-gradient {
+  background: linear-gradient(135deg, #9c5b2f 0%, #be855c 45%, #7a431f 100%);
+}
+
+.bg-bronze-dark-gradient {
+  background: linear-gradient(135deg, #18110d 0%, #291b12 50%, #18110d 100%);
+}
+
+.eyebrow,
+.eyebrow-light {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-cinzel);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: #7a431f;
+}
+
+.eyebrow-light {
+  color: #d6bba0;
+}
+
+.eyebrow::before,
+.eyebrow-light::before {
+  width: 1.85rem;
+  height: 1.5px;
+  flex: none;
+  background: currentColor;
+  content: "";
+}
+
+.nav-link {
+  position: relative;
+  padding-block: 0.5rem;
+  color: #4f4640;
+  font-family: var(--font-cinzel);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1.5px;
+  background: #7a431f;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover {
+  color: #7a431f;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.footer-link {
+  font-family: var(--font-body);
+  transition: color 180ms ease;
+}
+
+.footer-link:hover {
+  color: #d6bba0;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1e9de;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #f1e9de;
+  border-radius: 999px;
+  background: #be855c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7a431f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
